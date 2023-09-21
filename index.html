@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/iconenovo.ico" type="image/x-icon">
+    <title>Academia Futuro em Foco!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,300&family=Roboto:wght@900&display=swap');
+
+        body {
+            height: 100vh;
+            /*background-image: url('img/3d-abstrato-geometrico.jpg');*/
+
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+
+    <style>
+        div.bloco {
+
+            background-image: url(img/sejaOSeuMelhor.png);
+
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 10px;
+            background-position: center center;
+            background-size: cover;
+        }
+
+
+        div#q2 {
+
+            background-image: url(img/imc3.png);
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 10px;
+            background-position: center center;
+            background-size: cover;
+
+
+        }
+    </style>
+
+
+
+</head>
+<div>
+    <header>
+        <h1>Bem-vindo à Academia!</h1>
+    </header>
+</div>
+
+
+<body>
+
+
+
+    <div>
+        <img class="logo" src="img/Design sem nome.png" alt="logo">
+
+        <a class="titulo">CONSTRUA SEU CORPO PERFEITO</a>
+
+    </div>
+
+    <div>
+        <h2 class="aa">Encontre o seu exercicio e alimentação Ideal </h2>
+
+
+
+    </div>
+    <div class="bloco" id="q1">
+    </div>
+
+
+
+
+    <div class="container mt-5">
+        <h1 class="text-center">Coloque suas informações</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" class="form-control" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="confirmPersonalInfo()">Confirmar
+                        Dados</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="row mt-4" id="imc-calculator" style="display: none;">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center">Calculadora de IMC</h2>
+
+
+            </div>
+            <div class="bloco" id="q2">
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Peso (em kg):</label>
+                <input type="number" class="form-control" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Altura (em metros):</label>
+                <input type="number" class="form-control" id="height" step="0.01" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="calculateIMC()">Calcular IMC</button>
+            <div id="imc-result" class="mt-3 text-center"></div>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-4" id="goal-questionnaire" style="display: none;">
+        <div class="col-md-6 offset-md-3">
+
+
+            <h2 class="text-center">Qual sua meta na academia?</h2>
+
+
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="goal" id="goal-hypertrophy" value="Hipertrofia">
+                <label class="form-check-label" for="goal-hypertrophy">A- Hipertrofia</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="goal" id="goal-weight-loss" value="Perda de peso">
+                <label class="form-check-label" for="goal-weight-loss">B- Perda de peso</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="goal" id="goal-health" value="Saúde">
+                <label class="form-check-label" for="goal-health">C- Saúde</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="goal" id="goal-strength" value="Fortalecimento">
+                <label class="form-check-label" for="goal-strength">D- Fortalecimento</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="goal" id="goal-fitness"
+                    value="Condicionamento físico">
+                <label class="form-check-label" for="goal-fitness">E- Condicionamento físico</label>
+            </div>
+            <button type="button" class="btn btn-primary btn-block mt-3"
+                onclick="showWorkoutAndDiet()">Confirmar</button>
+        </div>
+    </div>
+    <div class="row-mt-4" id="workout-and-diet" style="display: none;">
+
+        <div class="col-md-8 offset-md-3">
+            <h2 class="text-center">Plano de Treino e Dieta</h2>
+            <div id="workout"></div>
+            <div id="diet"></div>
+        </div>
+    </div>
+    </div>
+
+
+    <footer>
+        <div class="rodape-esquerda">
+            <p>&copy; Nomes dos Participantes do grupo:</p>
+        </div>
+        <div class="rodape-esquerda">
+            <p>&copy; Guilherme Ribeiro Araujo dos Santos</p>
+        </div>
+        <div class="rodape-esquerda">
+            <p>&copy; Nome:</p>
+        </div>
+        <div class="rodape-esquerda">
+            <p>&copy; Nome</p>
+        </div>
+        <div class="rodape-esquerda">
+            <p>&copy; Nome:</p>
+        </div>
+
+
+
+        <div class="rodape-meio">
+            <p>Endereço: 123 Rua Principal, Cidade</p>
+        </div>
+        <div class="rodape-direita">
+            <p>Telefone: (123) 456-7890</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
